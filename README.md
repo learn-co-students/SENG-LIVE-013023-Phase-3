@@ -1,4 +1,4 @@
-# SENG-LIVE-000000 Phase 3 - Python
+# SENG-LIVE-013023 Phase 3 - Python
 
 ## Phase Level Objectives
 
@@ -12,14 +12,14 @@
 
 | Lecture | Notes | Videos | Starter | Solution |
 | ------- | :---: | ------ | ------- | -------- |
-| 1. (00/00/00) Python Fundamentals     |  [Notes](#)     |  [Video](#)      |    [Starter](#)     |   [Solution](#)       |
-| 2. (00/00/00) Python Data Structures     |  [Notes](#)     |   [Video](#)     |    [Starter](#)     |    [Solution](#)        |
-| 3. (00/00/00) Object Oriented Programming in Python     |  [Notes](#)     |  [Video](#)      |   [Starter](#)      |    [Solution](#)      |
-| 4. (00/00/00) OOP 2: Class Methods & Class Variables     |   [Notes](#)    |   [Video](#)     |   [Starter](#)      |  [Solution](#)        |
-| 5. (00/00/00) SQL Fundamentals & Table Relations     |  [Notes](#)     |   [Video](#)     |   [Starter](#)      |   [Solution](#)         |
-| 6. (00/00/00) Object-Relational Mapping     |   [Notes](#)    |   [Video](#)     |    [Starter](#)     |   [Solution](#)       |
-| 7. (00/00/00) SQLAlchemy & Alembic     |   [Notes](#)    |    [Video](#)    |   [Starter](#)      |    [Solution](#)      |
-| 8. (00/00/00) SQLAlchemy Associations     |   [Notes](#)    |    [Video](#)    |   [Starter](#)      |    [Solution](#)      |
+| 1. (03/13/23) Python Fundamentals     |  [Notes](#)     |  [Video](#)      |    [Starter](#)     |   [Solution](#)       |
+| 2. (03/14/23) Python Data Structures     |  [Notes](#)     |   [Video](#)     |    [Starter](#)     |    [Solution](#)        |
+| 3. (03/15/23) Object Oriented Programming in Python     |  [Notes](#)     |  [Video](#)      |   [Starter](#)      |    [Solution](#)      |
+| 4. (03/16/23) OOP 2: Class Methods & Class Variables     |   [Notes](#)    |   [Video](#)     |   [Starter](#)      |  [Solution](#)        |
+| 5. (03/17/23) SQL Fundamentals & Table Relations     |  [Notes](#)     |   [Video](#)     |   [Starter](#)      |   [Solution](#)         |
+| 6. (03/20/23) Object-Relational Mapping     |   [Notes](#)    |   [Video](#)     |    [Starter](#)     |   [Solution](#)       |
+| 7. (03/21/23) SQLAlchemy & Alembic     |   [Notes](#)    |    [Video](#)    |   [Starter](#)      |    [Solution](#)      |
+| 8. (03/24/23) SQLAlchemy Associations     |   [Notes](#)    |    [Video](#)    |   [Starter](#)      |    [Solution](#)      |
 
 ## 1: Python Fundamentals
 ### Lecture Goals:
