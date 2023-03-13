@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-# 📚 Review With Students:
-    # Python environment set up
-	# Python debugging tools 
-	# Python datatypes 
+# 📚 Review:
+    # Python Environment Setup
+	# Python Debugging Tools
+	# Python Data Types 
 
 # 🚨 To enable ipdb debugging, first import "ipdb"
 import ipdb
