@@ -52,7 +52,12 @@ import ipdb
     # If pet_mood is "Hungry!" => "Rose needs to be fed."
     # In all other cases => "Rose is all good."
 
-# print("Rose needs to be fed.") if (pet_mood == "Hungry!") else (print("Rose is all good."))
+# Function to Be Invoked Inside Primary Ternary Operator
+def update_mood(pet_mood):
+    print("Rose needs to be fed.") if (pet_mood == "Hungry!")) else (print("Rose is all good."))
+    return mood
+
+print("Rose needs to be fed.") if (update_mood(pet_mood))) else (print("Rose is all good."))
 
 # JavaScript => function / const + Arrow Syntax
 # Python => def
@@ -106,29 +111,32 @@ def pet_greeting(name = "Pet"):
 # pet_mood = "Rowdy!"
 # pet_name = "Rose"
 
-# test_var = "Test"
+test_var = "Test"
 
-# def pet_status(my_pet_name, my_pet_mood):
+def pet_status(my_pet_name, my_pet_mood):
     
-#     global test_var
-#     test_var = "New Value"
+    global test_var
+    test_var = "New Value"
 
-#     # print(test_var)
+    # test_var inside Function
+    print(test_var)
 
-#     # Function (Local) Scope
-#     if my_pet_mood == "Hungry!":
-#         print(f"{my_pet_name} needs to be fed!")
-#     elif my_pet_mood == "Rowdy!":
-#         print(f"{my_pet_name} needs to be walked!")
-#     else:
-#         print(f"{my_pet_name} is all good!")
+    # Function (Local) Scope
+    if my_pet_mood == "Hungry!":
+        print(f"{my_pet_name} needs to be fed!")
+    elif my_pet_mood == "Rowdy!":
+        print(f"{my_pet_name} needs to be walked!")
+    else:
+        print(f"{my_pet_name} is all good!")
+
+pet_status("Spot", "Rowdy!")
 
 # Limitations of Function (Local) Scope
 # NameError: name 'test_var' is not defined
-# print(test_var)
+print(test_var)
 
 # pet_status(pet_name, my_pet_mood)
-# pet_status("Spot", "Rowdy!")
+
 # pet_status("Bud", "Relaxed")
 
 
@@ -155,7 +163,7 @@ def pet_birthday(age = 0.1):
     #     print("Type Error Occurred!")
 
 pet_birthday(10)
-pet_birthday("oops")
+# pet_birthday("oops")
 
 # 🚨 To create an ipdb breakpoint, comment / uncomment line below:
-ipdb.set_trace()
+# ipdb.set_trace()
