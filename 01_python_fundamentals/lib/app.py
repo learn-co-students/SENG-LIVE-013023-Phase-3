@@ -8,15 +8,43 @@
 # 🚨 To enable ipdb debugging, first import "ipdb"
 import ipdb
 
+# Python => snake_case 
+# JavaScript => camelCaseEachNewWord
+
+# JavaScript => Declare Variables Without Assignment
+# Python => Cannot Declare Variables Without Assignment
+
+# NameError: name 'pet_mood' is not defined
+
 # 1. ✅ Create a condition to check a pet's mood
-    # If "pet_mood" is "Hungry!", "Rose needs to be fed."
+    # DONE => If "pet_mood" is "Hungry!", "Rose needs to be fed."
     # If "pet_mood" is "Rowdy!", "Rose needs a walk."
     # In all other cases, "Rose is all good."
 
     # Note => Feel free to set your own values for "pet_mood" to view various outputs.
 
-pet_mood = "Hungry!"
+pet_mood = "Rowdy!"
 pet_name = "Rose"
+
+# ipdb.set_trace()
+
+# JavaScript => else if
+# Python => elif
+
+# if (pet_mood == "Hungry!"){
+if pet_mood == "Hungry!":
+    print("Rose needs to be fed!")
+elif pet_mood == "Rowdy!":
+    print("Rose needs to be walked!")
+# elif pet_mood == "Feisty!":
+#     print("Rose needs to be walked!")
+# elif pet_mood == "Mischievous!":
+#     print("Rose needs to be walked!")
+# elif pet_mood == "Bored!":
+#     print("Rose needs to be walked!")
+else:
+    print("Rose is all good!")
+
 
 # 2. ✅ Create a ternary operator using "pet_mood" as a condition:
     # If pet_food is "Hungry!" => "Rose needs to be fed."
