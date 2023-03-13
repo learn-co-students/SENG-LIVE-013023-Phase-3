@@ -53,11 +53,11 @@ import ipdb
     # In all other cases => "Rose is all good."
 
 # Function to Be Invoked Inside Primary Ternary Operator
-def update_mood(pet_mood):
-    print("Rose needs to be fed.") if (pet_mood == "Hungry!")) else (print("Rose is all good."))
-    return mood
+# def update_mood(pet_mood):
+#     print("Rose needs to be fed.") if (pet_mood == "Hungry!")) else (print("Rose is all good."))
+#     return mood
 
-print("Rose needs to be fed.") if (update_mood(pet_mood))) else (print("Rose is all good."))
+# print("Rose needs to be fed.") if (update_mood(pet_mood))) else (print("Rose is all good."))
 
 # JavaScript => function / const + Arrow Syntax
 # Python => def
@@ -129,11 +129,11 @@ def pet_status(my_pet_name, my_pet_mood):
     else:
         print(f"{my_pet_name} is all good!")
 
-pet_status("Spot", "Rowdy!")
+# pet_status("Spot", "Rowdy!")
 
 # Limitations of Function (Local) Scope
 # NameError: name 'test_var' is not defined
-print(test_var)
+# print(test_var)
 
 # pet_status(pet_name, my_pet_mood)
 
@@ -147,9 +147,11 @@ print(test_var)
 
     # Note => To view more common Python exceptions, visit https://docs.python.org/3/library/exceptions.html
 
+test = "This is in Global Scope"
+
 def pet_birthday(age = 0.1):
     
-    age = "This is in Global Scope"
+    test = "This is in Function (Local) Scope"
     
     try:
         age = age + 1
