@@ -171,37 +171,64 @@ pet_fav_food = {'house plants', 'fish', 'bacon'}
 # Dictionaries 
 # Creating 
 #25. ✅  Create a dictionary of pet information with the keys "name", "age" and "breed"
+
+    # JSON Object
+
 pet_info_rose = {'name':'Rose', 'age':11, 'breed':'domestic long'}
 
 
 #26. ✅  Use dict to create a dictionary of pet information with the keys "name", "age" and "breed" => dict(...)
 pet_info_spot = dict(name='Spot', age=25, breed='boxer')
 
+    # Advantages => Less Keystrokes / Easier to Read Syntax
+
 # Reading
 #27. ✅ Print the pet attribute of "name" using bracket notation 
-# print(pet_info_rose['temperament'])
+
+# pet_info_rose['temperament']
+
+    # KeyError: 'temperament'
 
 #28. ✅ Print the pet attribute of "age" using ".get"
 
     # Note: ".get" is preferred over bracket notation in most cases 
     # because it will return "None" instead of an error
 
+    # .get() => Built In 
+
+# return_val = pet_info_rose.get('temperament', "Attribute Not Found!")
+# print(return_val)
+
 # Updating 
 #29. ✅ Update Rose's age to 12 => []
-
+# pet_info_rose['age'] = 12
 
 #30. ✅ Update Spot's age to 26 => .update({...})
 
+    # .update() => Dictionary Method
+        # Pass a Dictionary
+
+# pet_info_spot.update({'age': 26})
 
 # Deleting
 #31. ✅ Delete Rose's age using the "del" keyword => []
 
+    # del => Destructive
+    # Nothing is Returned
+
+# del pet_info_rose['age']
 
 #32. ✅ Delete Spot's age using ".pop"
 
+    # .pop() => Destructive
+    # Return Value => Value of the Key / Value Pair That Was Deleted
 
 #33. ✅ Delete the last item for Rose using "popitem()"
 
+    # .popitem() => Destructive
+    # Return Value => Tuple Containing (1st) Key Name and (2nd) Value Associated With Key
+
+# pet_info_spot.popitem()
 
 # Loops 
 pet_info = [
