@@ -11,4 +11,4 @@
 - Demonstrate standard methods for accessing, updating and deleting values in Dictionaries
 - Demonstrate Set types with set and frozen set
 - Demonstrate `for` and `while` loops
-- Demonstrate list compressions
+- Demonstrate list comprehensions

@@ -92,7 +92,7 @@
 - Demonstrate standard methods for accessing, updating and deleting values in Dictionaries
 - Demonstrate Set types with `set()` and `frozenset()`
 - Demonstrate `for` and `while` loops
-- Demonstrate list compressions 
+- Demonstrate list comprehensions 
 - Stretch Goals
     - Demonstrate Generator expressions 
     - Demonstrate how to create a `switch` using a Dictionary
@@ -113,7 +113,7 @@
 - Loops
     - `for`
     - `while`
-    - List Compression
+    - List Comprehensions
 - Sequence Operators
 - Sequence Functions and Methods
 - Stretch Topics

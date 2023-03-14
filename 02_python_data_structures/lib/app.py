@@ -17,7 +17,7 @@ pet_names = ['Rose', 'Meow Meow Beans', 'Mr.Legumes', 'Luke', 'Lea', 'Princess G
 #4. ✅ Return all pet names before the 3rd index
 
 
-#5. ✅ Return all pet names beginning from the 3rd index and up to the 7th
+#5. ✅ Return all pet names beginning from the 3rd index and up to / including the 7th index
 
 
 #6. ✅ Find the index of a given element => .index()
@@ -30,7 +30,7 @@ pet_names = ['Rose', 'Meow Meow Beans', 'Mr.Legumes', 'Luke', 'Lea', 'Princess G
 
 
 # Updating Lists
-#9. ✅ Change the first name to all uppercase letters => .upper()
+#9. ✅ Change the first pet_name to all uppercase letters => .upper()
 
 
 #10. ✅ Append a new name to the list => .append()
@@ -56,6 +56,11 @@ pet_names = ['Rose', 'Meow Meow Beans', 'Mr.Legumes', 'Luke', 'Lea', 'Princess G
 #Tuple
 # 📚 Review:
     # Mutable, Immutable <=> Changeable, Unchangeable
+    
+    # Why Are Tuples Immutable?
+
+        # What advantages does this provide for us? In what situations
+        # would this serve us?
 
 #17. ✅ Create a Tuple of 10 pet ages => () 
 
@@ -103,7 +108,6 @@ pet_info_spot = dict(name='Spot', age=25, breed='boxer')
     # Note: ".get" is preferred over bracket notation in most cases 
     # because it will return "None" instead of an error
 
-
 # Updating 
 #29. ✅ Update Rose's age to 12 => []
 
@@ -134,7 +138,7 @@ pet_info = [
         'breed': 'boxer',
     },
     {
-        'name':'Meow Meow Beans',
+        'name':'Gracie',
         'age':2,
         'breed': 'domestic long-haired',
     }
@@ -155,11 +159,11 @@ pet_info = [
 
 
 #38. ✅ Create a function that takes a list as a parameter
-    # The function should define a counter and set it to 0
+    # The function should define a variable ("counter") and set it to 0
     # Create a "while" loop 
         # The loop will continue as long as the counter is less than the length of the list
         # Every loop should increase the count by 1
-    # Return the counter 
+    # Once the loop has finished, return the final value of "counter"
 
 
 #39. ✅ Create a function that updates the age of a given pet
