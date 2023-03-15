@@ -94,22 +94,12 @@ class Owner:
 
             print("Age must be a number between 18 - 100")
 
-    def _get_age(self):
-        print(self._age)
-
-    # get_name => Retrieve Owner's name
-    def _get_name(self):    
-        print(self._name)
-
-    # set_name => Set Owner's name
-
-        # Ensure that Owner's name is a String
-
-        # If not, issue warning of "Name must be a string"
-
     def _set_name(self, name):
         
         # If "name" that's passed in is a String...
+        # isinstance => Accepts Two Args
+        # if(isinstance(name, str)):
+
         if(type(name) == str):
             
             # ...we can safely assume that this is acceptable
@@ -120,6 +110,19 @@ class Owner:
         else:
 
             print("Name must be a string!")
+
+    # def _get_age(self):
+    #     print(self._age)
+
+    # # get_name => Retrieve Owner's name
+    # def _get_name(self):    
+    #     print(self._name)
+
+    # set_name => Set Owner's name
+
+        # Ensure that Owner's name is a String
+
+        # If not, issue warning of "Name must be a string"
 
     # Instance Variables
     # name = property(get_name, set_name)
