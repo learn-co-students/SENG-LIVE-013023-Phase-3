@@ -13,7 +13,7 @@
 | Lecture | Notes | Videos | Starter | Solution |
 | ------- | :---: | ------ | ------- | -------- |
 | 1. (03/13/23) Python Fundamentals     |  [Notes](https://github.com/learn-co-students/SENG-LIVE-013023-Phase-3/compare/main...01_notes)     |  [Video](https://vimeo.com/807666391)      |    [Starter](https://github.com/learn-co-students/SENG-LIVE-013023-Phase-3/tree/main/01_python_fundamentals)     |   [Solution](https://github.com/learn-co-students/SENG-LIVE-013023-Phase-3/tree/01_notes/01_python_fundamentals)       |
-| 2. (03/14/23) Python Data Structures     |  [Notes](#)     |   [Video](#)     |    [Starter](#)     |    [Solution](#)        |
+| 2. (03/14/23) Python Data Structures     |  [Notes](https://github.com/learn-co-students/SENG-LIVE-013023-Phase-3/compare/main...02_notes)     |   [Video](https://vimeo.com/808089824)     |    [Starter](https://github.com/learn-co-students/SENG-LIVE-013023-Phase-3/tree/main/02_python_data_structures)     |    [Solution](https://github.com/learn-co-students/SENG-LIVE-013023-Phase-3/tree/02_notes/02_python_data_structures)        |
 | 3. (03/15/23) Object Oriented Programming in Python     |  [Notes](#)     |  [Video](#)      |   [Starter](#)      |    [Solution](#)      |
 | 4. (03/16/23) OOP 2: Class Methods & Class Variables     |   [Notes](#)    |   [Video](#)     |   [Starter](#)      |  [Solution](#)        |
 | 5. (03/17/23) SQL Fundamentals & Table Relations     |  [Notes](#)     |   [Video](#)     |   [Starter](#)      |   [Solution](#)         |
