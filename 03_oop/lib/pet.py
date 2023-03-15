@@ -80,23 +80,25 @@ class Pet:
 
 class Owner:
     
-    # def __init__(self, name, age):
-    #     self.age = self.set_age(age)
-    #     self.name = self.set_name(name)
+    def __init__(self, name, age):
+        self.age = self._set_age(age)
+        self.name = self._set_name(name)
 
-    def set_age(self, age):
+    my_class_variable = "Test"
+
+    def _set_age(self, age):
         if((type(age) == int) and (18 <= age <= 100)):
-            self._age = age
+            return age
 
         else:
 
-            return "Age must be a number between 18 - 100"
+            print("Age must be a number between 18 - 100")
 
-    def get_age(self):
+    def _get_age(self):
         print(self._age)
 
     # get_name => Retrieve Owner's name
-    def get_name(self):    
+    def _get_name(self):    
         print(self._name)
 
     # set_name => Set Owner's name
@@ -105,7 +107,7 @@ class Owner:
 
         # If not, issue warning of "Name must be a string"
 
-    def set_name(self, name):
+    def _set_name(self, name):
         
         # If "name" that's passed in is a String...
         if(type(name) == str):
@@ -113,16 +115,15 @@ class Owner:
             # ...we can safely assume that this is acceptable
             # to set for our instance.
 
-            self._name = name
+            return name
 
         else:
 
-            return "Name must be a string!"
+            print("Name must be a string!")
 
-    # Instance Properties
-
-    name = property(get_name, set_name)
-    age = property(get_age, set_age)
+    # Instance Variables
+    # name = property(get_name, set_name)
+    # age = property(get_age, set_age)
 
     # Use property() to compile get_name / set_name and invoke them
     # whenever we access an Owner instance's name
