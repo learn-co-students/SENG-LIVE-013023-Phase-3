@@ -106,6 +106,12 @@ def calculate_price(price):
     
     # :.2f => Format Price as 2 Decimal Point Floating Number
     
-    return '{:.2f}'.format(round(price / 2, 2))
+    # Formatting:
+
+        # Prices
+        # Quantities
+
+    # return '{:.2f}'.format(round(price / 2, 2))
+    return f'{round(price / 2, 2):.2f}'
 
 calculate_price()

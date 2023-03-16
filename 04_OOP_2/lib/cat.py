@@ -38,7 +38,7 @@ class Cat(Pet):
         
         # Add super().print_pet_details() and print the indoor attribute
 
-    def print_pet_details(self):
+    def print_cat_details(self):
         # print(f'''
         #     name:{self.name}
         #     age:{self.age}
