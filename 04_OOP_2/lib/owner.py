@@ -7,6 +7,9 @@ class Owner():
         self.account_balance = account_balance
 
     # Decorator
+        # func => vet_visit
+        # func => weekly_food
+        # func => weekly_housing
     def balance_calculator(func):
         
         def report_balance(owner):
@@ -20,7 +23,9 @@ class Owner():
     @balance_calculator
     def vet_visit(self, bill=100):
         # Deduct $100 From Account / Report Final Account Balance
-        print(f"Deducting {bill} from Account...")
+        print(f"Deducting ${bill} from Account...")
+        
+        # self.account_balance = self.account_balance - bill
         self.account_balance -= bill
         
         return '{:.2f}'.format(self.account_balance)
