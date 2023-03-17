@@ -152,6 +152,8 @@ CREATE TABLE appointments(
         FOREIGN KEY(pet_id) REFERENCES pets(id)
 )
 
+DROP TABLE appointments;
+
 -- Seed Our New Tables
 
 INSERT INTO handlers (name, email, phone) 
@@ -174,8 +176,30 @@ VALUES ('2022-06-01 00:00:00', 'drop-in', 1,2);
 INSERT INTO appointments (time, request, pet_id, handler_id) 
 VALUES ('2022-05-21 00:00:00', 'walk', 2,2);
 
-SELECT * FROM appointments;
+-- Option 1: Pull All Owners / Use Python To Order 
+-- Alphabetically By Name
 
+SELECT * FROM owners;
+
+-- Option 2: SQL Query To Perform Sorting Before
+-- Returning Data
+
+SELECT * FROM owners
+ORDER BY name ASC;
+
+-- json-server
+    -- JSON
+    -- Light Introduction to Persisting Data
+    -- No Association-Building Capabilities 
+
+-- SQL
+    -- Real World Application
+    -- More Appropriate for Larger Bodies Of Data
+
+    -- Pet.all()
+
+        -- SELECT * from pets;
+        
 -- R => Read
 
 SELECT
