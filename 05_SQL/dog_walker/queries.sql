@@ -100,8 +100,7 @@ WHERE age < 50;
 -- U => Update
 
 UPDATE pets
-SET age = 25
-SET breed = "some new breed"
+SET age = 12, breed = "siamese"
 WHERE name = "rose";
 
 UPDATE pets
@@ -118,3 +117,84 @@ WHERE name = "rose";
 
 DELETE FROM pets 
 WHERE age > 2;
+
+-- Reading Information Through One to Many Association
+-- Between pets And owners
+
+    -- Pet: Luke
+    -- Owner: john
+
+    -- Pet: rose
+    -- Owner: ix
+
+    -- SORT BY OWNER NAME (Alphabetically)
+
+SELECT pets.name, owners.name as 'owner_name'
+FROM pets
+JOIN owners ON pets.owner_id = owners.id
+
+-- Many to Many
+
+CREATE TABLE handlers(
+    id INTEGER PRIMARY KEY,
+    name STRING,
+    email STRING,
+    phone INTEGER
+)
+
+CREATE TABLE appointments(
+    id INTEGER PRIMARY KEY,
+    time DATETIME,
+    request STRING,
+    handler_id INTEGER,
+    pet_id INTEGER,
+        FOREIGN KEY(handler_id) REFERENCES handlers(id),
+        FOREIGN KEY(pet_id) REFERENCES pets(id)
+)
+
+-- Seed Our New Tables
+
+INSERT INTO handlers (name, email, phone) 
+VALUES ('gannie', 'grannie52@gmail.com', '1239087654');
+
+INSERT INTO handlers (name, email, phone) 
+VALUES ('dorian', 'blue_boy@gmail.com', '8887776666');
+
+SELECT * FROM handlers;
+
+INSERT INTO appointments (time, request, pet_id, handler_id) 
+VALUES ('2022-07-31 00:00:00', 'drop-in', 1,1);
+
+INSERT INTO appointments (time, request, pet_id, handler_id) 
+VALUES ('2022-03-01 00:00:00', 'drop-in', 1,1);
+
+INSERT INTO appointments (time, request, pet_id, handler_id) 
+VALUES ('2022-06-01 00:00:00', 'drop-in', 1,2);
+
+INSERT INTO appointments (time, request, pet_id, handler_id) 
+VALUES ('2022-05-21 00:00:00', 'walk', 2,2);
+
+SELECT * FROM appointments;
+
+-- R => Read
+
+SELECT
+    pets.name,
+    handlers.name,
+    appointments.request,
+    appointments.time
+FROM appointments
+JOIN pets
+    ON appointments.pet_id = pets.id
+JOIN handlers
+    ON appointments.handler_id = handlers.id
+
+SELECT DISTINCT
+    pets.name,
+    handlers.name
+FROM appointments
+JOIN pets
+    ON appointments.pet_id = pets.id
+JOIN handlers
+    ON appointments.handler_id = handlers.id
+AND pets.name = "rose"
