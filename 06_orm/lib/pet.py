@@ -1,17 +1,16 @@
-# Stretch Goal: Include Association with Owner
-
 # Pet Attributes: 
 # name: TEXT 
 # species: TEXT
 # breed: TEXT 
 # temperament: TEXT
 
-# Stretch Goal
-# owner_id: INTEGER
-
+# https://docs.python.org/3/library/sqlite3.html#tutorial
 import sqlite3
 
+# https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection
 CONN = sqlite3.connect('lib/resources.db')
+
+# https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor
 CURSOR = CONN.cursor()
 
 class Pet:
@@ -28,7 +27,7 @@ class Pet:
 
     # ✅ 5. Add "create" Class Method to Initialize and Save New "pet" Instances to DB
 
-    # ✅ 6. Add "new_from_db" Class Method to Retrieve Newest "pet" Instance w/ Attributes From DB
+    # ✅ 6. Add "get_newest_pet" Class Method to Retrieve Newest "pet" Instance w/ Attributes From DB
 
     # ✅ 7. Add "get_all" Class Method to Retrieve All "pet" Instances From DB
 
@@ -47,4 +46,3 @@ class Pet:
         # If No "pet" Found, Create New "pet" Instance w/ All Attributes
 
     # ✅ 11. Add "update" Class Method to Find "pet" Instance by "id" and Update All Attributes
-
