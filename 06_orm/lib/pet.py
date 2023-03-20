@@ -4,6 +4,8 @@
 # breed: TEXT 
 # temperament: TEXT
 
+import ipdb
+
 # https://docs.python.org/3/library/sqlite3.html#tutorial
 import sqlite3
 
@@ -15,17 +17,86 @@ CURSOR = CONN.cursor()
 
 class Pet:
     
-    pass
+    # pass
 
     # ✅ 1. Add "__init__" with "name", "species", "breed", "temperament", and "id" (Default: None) Attributes
 
+        # Default Argument => None
+
+            # 1 => We Want Database to Assign ID
+            # 2 => When We Retrieve Records From DB, We Want the DB-Assigned
+            # ID to Take the Place of "None"
+
+    def __init__(self, name, species, breed, temperament, id=None):
+        self.id = id
+        self.name = name
+        self.species = species
+        self.breed = breed
+        self.temperament = temperament
+
     # ✅ 2. Add "create_table" Class Method to Create "pets" Table If Doesn't Already Exist
+
+    @classmethod
+    def create_table(cls):
+        # Write Up SQL To Create pets Table
+
+        sql = """
+            CREATE TABLE IF NOT EXISTS pets
+                (id INTEGER PRIMARY KEY,
+                name STRING,
+                species STRING,
+                breed STRING,
+                temperament STRING)
+        """
+
+        CURSOR.execute(sql)
 
     # ✅ 3. Add "drop_table" Class Method to Drop "pets" Table If Exists
 
+    @classmethod
+    def drop_table(cls):
+        sql = """
+            DROP TABLE IF EXISTS pets
+        """
+
+        CURSOR.execute(sql)
+
     # ✅ 4. Add "save" Instance Method to Persist New "pet" Instances to DB
 
+    def save(self):
+        
+        # ipdb.set_trace()
+        
+        sql = """
+            INSERT INTO pets (name, species, breed, temperament)
+            VALUES (?, ?, ?, ?)
+        """
+
+        # self.id = CURSOR.lastrowid
+
+        CURSOR.execute(sql, (self.name, self.species, self.breed, self.temperament))
+
     # ✅ 5. Add "create" Class Method to Initialize and Save New "pet" Instances to DB
+
+        # Instantiate Pet Class
+        # Persist New Instance to pets Table
+
+    @classmethod
+    def create(cls, name, species, breed, temperament):
+
+        # Invoking __init__ Method to Instantiate Pet Class
+        pet = cls(name, species, breed, temperament)
+
+        # Invoking save() Instance Method to Persist New Instance
+        # to DB
+        pet.save()
+
+        return pet
+
+        # To Verify Persistence:
+
+            # pets = CURSOR.execute('SELECT * FROM pets')
+            # [pet for pet in pets]
 
     # ✅ 6. Add "get_newest_pet" Class Method to Retrieve Newest "pet" Instance w/ Attributes From DB
 
