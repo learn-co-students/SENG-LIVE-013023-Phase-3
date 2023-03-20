@@ -18,5 +18,7 @@ pet2 = Pet.create("rover", "dog", "boxer", "chill")
 # spot1.save()
 # spot2.save()
 
+# spot1.update("bud")
+
 
 import ipdb; ipdb.set_trace()

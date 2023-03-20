@@ -166,12 +166,84 @@ class Pet:
 
         # If No "pet" Found, return "None"
 
+    @classmethod
+    def find_by_id(cls, id):
+
+        sql = """
+            SELECT * FROM pets
+            WHERE id = ?
+            LIMIT 1
+        """
+
+        row = CURSOR.execute(sql, (id,)).fetchone()
+
+        if not row:
+
+            print("Pet Not Found!")
+
+            return None
+
+        else:
+
+            # Create Instance of Pet Class From Found Record
+                # Invoke "__init__"
+
+            return cls(
+                id=row[0],
+                name=row[1],
+                species=row[2],
+                breed=row[3],
+                temperament=row[4]
+            )
+
     # R => Read (End)
 
     # ✅ 10. Add "find_or_create_by" Class Method to:
 
+    @classmethod
+    def find_or_create_by(cls, name=None, species=None, breed=None, temperament=None):
+
+        # Fusion of Create / Read
+
         #  Find and Retrieve "pet" Instance w/ All Attributes
 
-        # If No "pet" Found, Create New "pet" Instance w/ All Attributes
+        sql = """
+            SELECT * FROM pets
+            WHERE (name, species, breed, temperament) = (?, ?, ?, ?)
+            LIMIT 1
+        """
 
-    # ✅ 11. Add "update" Class Method to Find "pet" Instance by "id" and Update All Attributes
+        row = CURSOR.execute(sql, (name, species, breed, temperament,)).fetchone()
+
+        if row:
+
+            print("Conflict!")
+
+            return None
+
+
+        # If No "pet" Found, Create New "pet" Instance w/ All Attributes + Persist to DB
+
+        if not row:
+
+            sql = """
+                INSERT INTO pets (name, species, breed, temperament)
+                VALUES (?, ?, ?, ?)
+            """
+
+            pet = CURSOR.execute(sql, (name, species, breed, temperament,))
+
+    # ✅ 11. Add "update" Instance Method to Find "pet" Instance by "id" and Update All Attributes
+
+    def update(self):
+
+        # Create SQL Query to Update Particular Pet Record in DB
+
+        sql = """
+            UPDATE pets
+            SET name = ?,
+                breed = ?
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql, (self.name, self.breed, self.id))
