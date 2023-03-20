@@ -63,6 +63,8 @@ class Pet:
 
     # ✅ 4. Add "save" Instance Method to Persist New "pet" Instances to DB
 
+    # C => Create (Start)
+
     def save(self):
         
         # ipdb.set_trace()
@@ -98,17 +100,73 @@ class Pet:
             # pets = CURSOR.execute('SELECT * FROM pets')
             # [pet for pet in pets]
 
+    # C => Create (End)
+ 
+    # R => Read (Start)
+
     # ✅ 6. Add "get_newest_pet" Class Method to Retrieve Newest "pet" Instance w/ Attributes From DB
 
+    @classmethod
+    def get_newest_pet(cls, row):
+        pet = cls(
+            id=row[0],
+            name=row[1],
+            species=row[2],
+            breed=row[3],
+            temperament=row[4]
+        )
+
+        return pet
+
     # ✅ 7. Add "get_all" Class Method to Retrieve All "pet" Instances From DB
+    @classmethod
+    def get_all(cls):
+        sql = """
+            SELECT * FROM pets
+        """
+
+        return [cls.get_newest_pet(row) for row in CURSOR.execute(sql)]
 
     # ✅ 8. Add "find_by_name" Class Method to Retrieve "pet" Instance by "name" Attribute From DB
 
         # If No "pet" Found, return "None"
 
+    @classmethod
+    def find_by_name(cls, name):
+
+        sql = """
+            SELECT * FROM pets
+            WHERE name = ?
+            LIMIT 1
+        """
+
+        row = CURSOR.execute(sql, (name,)).fetchone()
+
+        if not row:
+
+            print("Pet Not Found!")
+
+            return None
+
+        else:
+
+            # Create Instance of Pet Class From Found Record
+                # Invoke "__init__"
+
+            return cls(
+                id=row[0],
+                name=row[1],
+                species=row[2],
+                breed=row[3],
+                temperament=row[4]
+            )
+    
+
     # ✅ 9. Add "find_by_id" Class Method to Retrieve "pet" Instance by "id" Attribute From DB
 
         # If No "pet" Found, return "None"
+
+    # R => Read (End)
 
     # ✅ 10. Add "find_or_create_by" Class Method to:
 
