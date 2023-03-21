@@ -1,4 +1,6 @@
 
+# Faker => Useful for Seeding Data to Our DB
+
 # 3. ✅ CRUD Practice
 
 # To run the file, run `python3 debug.py` in the app directory
@@ -46,13 +48,18 @@ if __name__ == '__main__':
         
         # resources = session.query(Resource)
 
-    pets = session.query(Pet)    
+    pets = session.query(Pet)
 
     # Print the pets 
     print([pet for pet in pets])
 
     # Get all of the pet names and print them with session.query
     names = session.query(Pet.name)
+
+        # breeds = session.query(Pet.breed)
+        # temperaments = session.query(Pet.temperaments)
+        # ...
+
     print([name for name in names])
 
     # Get all the pet names and print them in order with session.query and order_by
@@ -64,6 +71,11 @@ if __name__ == '__main__':
     print(first_pet)
 
     # Filter pet by temperament with session.query and filter 
+    
+    # query_results = session.query(Pet).filter(Pet.temperament.like('%mischevious%'))
+
+        # => Yields No Results
+    
     query_results = session.query(Pet).filter(Pet.temperament.like('%feisty%'))
     
     for record in query_results:
@@ -78,6 +90,10 @@ if __name__ == '__main__':
 
     # Update all the pets' temperaments to 'cool' and print the pets 
     session.query(Pet).update({Pet.temperament: 'Relaxed'})
+
+        # session.commit() => Not Necessary, .update() Takes Care
+        # of Commit for Us
+
     pets = session.query(Pet)
     print([pet for pet in pets])
 
