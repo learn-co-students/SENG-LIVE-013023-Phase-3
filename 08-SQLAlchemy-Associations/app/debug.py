@@ -16,16 +16,24 @@ if __name__ == '__main__':
     # Getting an Owner's Pets
     
         # Use session.query and .first() to grab the first Owner
+        first_owner = session.query(Owner).first()
 
         # Use session.query and filter_by to get the Owner's pets from Pet
-    
+        owner_pets = session.query(Pet).filter_by(id=first_owner.id)
+
         # Print out the Owner's pets
+        print([pet for pet in owner_pets])
   
     # Getting a Pet's Owner
     
         # Use session.query and .first() to grab the first pet
-        
+        first_pet = session.query(Pet).first()
+
         # Use session.query and .filter_by() to get the owner associated with this pet
+        pet_owner = session.query(Owner).filter_by(id=first_pet.id)
+
+            # [ID: 1, Name: Stephen Munoz, Email: salazarmichael@example.net, Phone: 2449883715, Address: 800 Torres Road
+            # Denisemouth, RI 72304]
 
     # 4. ✅ Head back to models.py to build out a Many to Many association
 #--------------------------------------------
@@ -41,4 +49,4 @@ if __name__ == '__main__':
     # Use 'handler_jobs' to query pets for the associated pet to each job
 
     # Optional breakpoint for debugging
-    # import ipdb; ipdb.set_trace()
+    import ipdb; ipdb.set_trace()
