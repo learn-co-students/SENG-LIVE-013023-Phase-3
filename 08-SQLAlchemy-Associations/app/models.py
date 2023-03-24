@@ -1,6 +1,6 @@
 #1.✅ Update our Models to include a One to Many association
 
-# Pet >- Owner
+# Pets >- Owners
 
 # Import Foreign Key
 from sqlalchemy import (PrimaryKeyConstraint, Column, String, Integer, Float, DateTime, ForeignKey)
@@ -72,9 +72,12 @@ class Owner(Base):
 
 #4. ✅ Update our Models to have a Many to Many Association
 
-# Pet-< Jobs >- Handlers
+# Pets -< Jobs >- Handlers
 
 # Create a Handlers table 
+class Handler(Base):
+    __tablename__ = 'handlers'
+    __table_args__ = (PrimaryKeyConstraint('id'),)
 
     # Create the following columns
     # id -> type integer
@@ -82,23 +85,53 @@ class Owner(Base):
     # email -> type string
     # phone -> type int
     # hourly_rate -> type float
+    id = Column(Integer())
+    name = Column(String())
+    email = Column(String())
+    phone = Column(Integer())
+    hourly_rate = Column(Float())
+        # $15.50 / hr
 
    # Add a __repr__ method that returns a string containing the id, name, email, phone and hourly_rate of our class
- 
-# Create a "jobs" table to serve as our join
+    def __repr__(self):
+        return f"ID: {self.id}, " \
+            + f"Name: {self.name}, " \
+            + f"Email: {self.email}, "\
+            + f"Phone: {self.phone}, "\
+            + f"Hourly Rate: {self.hourly_rate}"
 
+# Create a "jobs" table to serve as our join
+class Job(Base):
+    __tablename__ = 'jobs'
+    __table_args__ = (PrimaryKeyConstraint('id'),)
+    
     # Create the following columns
     # id -> type integer
     # request -> type string
-    # data -> type datetime
+    # date -> type datetime
     # fee -> type float
     # pet_id -> type int with a ForeignKey('pet.id')
     # handler_id -> type int with a ForeignKey('handlers.id') 
+    id = Column(Integer())
+    request = Column(String())
+    date = Column(DateTime())
+    fee = Column(Float())
+    pet_id = Column(Integer(), ForeignKey('pets.id'))
+    handler_id = Column(Integer(), ForeignKey('handlers.id'))
+
 
     # Associate the models with relationship(<ModelNameHere>, backref=backref(<TableNameHere>))
-   
+    pet = relationship('Pet', backref=backref('pets'))
+    handler = relationship('Handler', backref=backref('handlers'))
+
+
     # Add a __repr__ method that returns a string containing the id, request, date, notes, fee, pet_id and handler_id of our class
-   
+    def __repr__(self):
+        return f"ID: {self.id}, " \
+            + f"Request: {self.request}, " \
+            + f"Date: {self.date}, "\
+            + f"Fee: {self.fee}, "
+
 # 5. ✅ Update your migrations by running `alembic revision --autogenerate -m "add handlers and jobs tables` 
 # followed by `alembic upgrade head` 
 
